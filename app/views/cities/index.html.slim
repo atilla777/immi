@@ -3,9 +3,13 @@ p style="color: green" = notice
 h1 Cities
 
 #cities
-  - @cities.each do |city|
-    == render city
-    p
-      = link_to "Show this city", city
+  table.table.table-zebra.w-full
+    - @cities.each do |city|
+      tr
+        td
+          == render city
+        td
+          p
+            = link_to "Show this city", city
 
 = link_to "New city", new_city_path
