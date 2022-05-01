@@ -13,8 +13,16 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+    <main class="container mx-auto">
+      <div class="grid grid-cols-10 gap-4">
+        <div class="col-span-1">
+        </div>
+        <div class="col-span-8">
+          <%= yield %>
+        </div>
+        <div class="col-span-1">
+        </div>
+      </div>
     </main>
   </body>
 </html>

@@ -1,15 +1,25 @@
 p style="color: green" = notice
 
-h1 Cities
+h1.text-white Cities
+h2.text-white Cities
+h3.text-white Cities
 
-#cities
-  table.table.table-zebra.w-full
+
+= link_to new_city_path do
+   .tooltip data-tip="Добавить"
+    .btn.btn-primary.mt-4
+      i.fa-solid.fa-plus.pr-1
+      span Добавить
+
+table.table.table-zebra.w-full#cities
+  thead
+    tr
+      th 1
+      th 2
+      th 3
+  tbody
     - @cities.each do |city|
-      tr
+      tr id="#{dom_id city}"
+        == render city
         td
-          == render city
-        td
-          p
-            = link_to "Show this city", city
-
-= link_to "New city", new_city_path
+          = link_to "Show this city", city
